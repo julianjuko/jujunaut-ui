@@ -1,0 +1,1 @@
+{"version":3,"file":"index.cjs.js","sources":["../src/Button/Button.tsx"],"sourcesContent":["import React from 'react'\n\nexport const Button: React.FC = (props) => {\n  return <div></div>\n}\n"],"names":["React"],"mappings":";;;;;;;;;;IAEa,MAAM,GAAa,UAAC,KAAK;IACpC,OAAOA,oDAAW,CAAA;AACpB;;;;"}
