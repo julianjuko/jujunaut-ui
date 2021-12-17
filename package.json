@@ -16,6 +16,9 @@
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
     "@storybook/react": "^6.4.9",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/react": "^12.1.2",
+    "@types/jest": "^27.0.3",
     "@types/react": "^17.0.37",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
@@ -24,6 +27,8 @@
     "eslint": "^8.4.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.4.5",
     "node-sass": "^6.0.1",
     "postcss": "^8.4.4",
     "prettier": "^2.5.1",
@@ -34,6 +39,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.31.1",
     "sass-loader": "^12.4.0",
+    "ts-jest": "^27.1.2",
     "typescript": "^4.5.2"
   },
   "peerDependencies": {
@@ -43,6 +49,10 @@
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint --ext .tsx,.ts,.js ./src",
-    "lint:fix": "eslint --ext .tsx,.ts,.js ./src --fix"
+    "lint:fix": "eslint --ext .tsx,.ts,.js ./src --fix",
+    "storybook": "start-storybook -p 6006",
+    "storybook:export": "build-storybook",
+    "test": "jest",
+    "test:watch": "jest --watch"
   }
 }
