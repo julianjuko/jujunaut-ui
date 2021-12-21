@@ -6,7 +6,9 @@ import Button from '../Button'
 describe('Button', () => {
   it('renders the button', () => {
     render(
-      <Button something='OMG' />
+      <Button variant='primary'>
+        OMG
+      </Button>
     )
 
     expect(screen.getByTitle('OMG')).toBeInTheDocument()
