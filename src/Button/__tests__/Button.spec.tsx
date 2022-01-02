@@ -6,13 +6,11 @@ import Button from '../Button'
 describe('Button', () => {
   it('renders the button', () => {
     render(
-      <Button variant='primary'>
+      <Button size='md' variant='primary'>
         OMG
       </Button>
     )
 
     expect(screen.getByTitle('OMG')).toBeInTheDocument()
-
-    
   })
 })

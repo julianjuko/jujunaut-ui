@@ -12,8 +12,20 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
-    "semi": [ "error", "never" ],
-    "quotes": [ "error", "single" ],
-    "prettier/prettier": "warning"
+    "semi": [
+      "warn",
+      "never"
+    ],
+    "quotes": [
+      "warn",
+      "single"
+    ],
+    "max-len": [
+      "warn",
+      {
+        "code": 80
+      }
+    ],
+    "prettier/prettier": "warn"
   }
 }

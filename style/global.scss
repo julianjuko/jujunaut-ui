@@ -1,5 +1,3 @@
-@import './colors.scss';
-
 $spacer: 16px; 
 
 .mt-0 {
@@ -462,36 +460,4 @@ $spacer: 16px;
   padding-right: auto !important;
   padding-bottom: auto !important;
   padding-left: auto !important;
-}
-
-/* Relegates important duties on to the others. */
-/* Still finds a way to be busy. */
-.btn-primary {
-  color: grey;
-  background: linear-gradient(145deg, #cce5f6, #acc1cf);
-  box-shadow:  6px 6px 12px #6f7c85,
-              -6px -6px 12px #ffffff;
-}
-
-/* Acts as the primary action color. Wields great power. */
-.btn-secondary {
-  background-color: $secondary-sunlight;
-  background: linear-gradient(145deg, #ffffd0, #e6ddaf);
-  box-shadow:  8px 8px 16px #948f71,
-             -8px -8px 16px #ffffff;
-}
-
-/* Secondary's second-in-command is, well, tertiary overall. */
-.btn-tertiary {
-  background-color: $tertiary-sunset;
-}
-
-/* Used for non-routine chores. Not to be trusted lightly. */
-.btn-quaternary {
-  background-color: $quaternary-twilight;
-}
-
-/* Sits behind the others. Its presence outlasts all. */
-.btn-quinary {
-  background-color: $quinary-dusk;
 }

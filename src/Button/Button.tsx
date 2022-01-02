@@ -1,12 +1,13 @@
 import React from 'react'
 import classnames from 'classnames'
 
+import { TButtonSize, TColorVariant } from './Button.types'
+
 import './Button.scss'
 
-type TColorVariant = 'primary' | 'secondary'
-
 interface IProps {
-  variant: TColorVariant;
+  size: TButtonSize
+  variant: TColorVariant
 }
 
 export const Button: React.FC<IProps> = (props) => {
@@ -14,6 +15,7 @@ export const Button: React.FC<IProps> = (props) => {
     <button
       className={classnames('ju-button', {
         [`btn-${props.variant}`]: props.variant,
+        [`ju-button-${props.size}`]: props.size
       })}
     >
       {props.children}

@@ -1,9 +1,99 @@
+@import '../../style/colors.scss';
+
 .ju-button {
   display: flex;
-  height: 40px;
+  border: none;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 16px;
 }
 
+.ju-button-sm {
+  height: 18px;
+  border-radius: 2px;
+  padding: 0 4px;
+}
 
+.ju-button-md {
+  height: 28px;
+  border-radius: 6px;
+  padding: 0 6px;
+}
+
+.ju-button-lg {
+  height: 40px;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+@mixin buttonIdle($color) {
+  background-color: $color;
+  background: linear-gradient(145deg, $color, darken($color, 8));
+}
+
+@mixin buttonActive($color) {
+  background-color: $color;
+  background: linear-gradient(145deg, darken($color, 2), lighten($color, 2));
+}
+
+@mixin buttonAura($color) {
+  box-shadow:  1px 1px 2px darken($color, 20),
+               0px 0px 2px lighten($color, 15);
+}
+
+// Relegates important duties on to the others.
+// Still finds a way to be busy.
+.btn-primary {
+  @include buttonIdle($primary);
+  @include buttonAura($primary);
+
+}
+
+.btn-primary:active {
+  @include buttonActive($primary);
+  @include buttonAura($primary);
+}
+
+// Acts as the primary action color. Wields great power.
+.btn-secondary {
+  @include buttonIdle($secondary);
+  @include buttonAura($secondary);
+}
+
+.btn-secondary:active {
+  @include buttonActive($secondary);
+  @include buttonAura($secondary);
+}
+
+// Secondary's second-in-command is, well, tertiary overall.
+.btn-tertiary {
+  @include buttonIdle($tertiary);
+  @include buttonAura($tertiary);
+}
+
+.btn-tertiary:active {
+  @include buttonActive($tertiary);
+  @include buttonAura($tertiary);
+}
+
+// Used for non-routine chores. Not to be trusted lightly.
+.btn-quaternary {
+  @include buttonIdle($quaternary);
+  @include buttonAura($quaternary);
+}
+
+.btn-quaternary:active {
+  @include buttonActive($quaternary);
+  @include buttonAura($quaternary);
+}
+
+// Sits behind the others. Its presence outlasts all. //
+.btn-quinary {
+  @include buttonIdle($quinary);
+  @include buttonAura($quinary);
+}
+
+.btn-quinary:active {
+  @include buttonActive($quinary);
+  @include buttonAura($quinary);
+}

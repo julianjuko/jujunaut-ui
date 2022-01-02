@@ -1,6 +1,7 @@
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
 import resolve from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
 import typescript from 'rollup-plugin-typescript2'
 import postcss from 'rollup-plugin-postcss'
 
@@ -12,14 +13,15 @@ export default {
     {
       file: packageJson.main,
       format: 'cjs',
-      sourcemap: true,
+      sourcemap: true
     },
     {
       file: packageJson.module,
       format: 'esm',
-      sourcemap: true,
-    },
+      sourcemap: true
+    }
   ],
+  external: [/@babel\/runtime/],
   plugins: [
     peerDepsExternal(),
     postcss({
@@ -33,9 +35,13 @@ export default {
     typescript({
       useTsconfigDeclarationDir: true,
       tsconfigOverride: {
-        exclude: ['**/__tests__', '**/*.test.ts'],
-      },
+        exclude: ['**/__tests__', '**/*.test.ts']
+      }
     }),
-    commonjs()
-  ],
+    commonjs(),
+    babel({
+      babelHelpers: 'runtime',
+      exclude: '**/node_modules/**'
+    })
+  ]
 }
