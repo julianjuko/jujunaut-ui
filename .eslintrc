@@ -26,6 +26,14 @@
         "code": 80
       }
     ],
+    "padding-line-between-statements": [
+      "warn",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "return"
+      }
+    ],
     "prettier/prettier": "warn"
   }
 }

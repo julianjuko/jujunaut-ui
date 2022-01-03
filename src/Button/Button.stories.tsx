@@ -3,14 +3,12 @@ import React from 'react'
 import Button from './Button'
 import { PRIMARY, QUINARY, TERTIARY } from '../colors'
 
-import '../../style/global.scss'
-import '../../style/typesetting.scss'
-
 export default {
-  title: 'TestComponent'
+  title: 'Button',
+  component: Button
 }
 
-export const ButtonStory = () => (
+export const ButtonVariousSizes = () => (
   <>
     <div
       style={{
@@ -122,3 +120,4 @@ export const ButtonStory = () => (
     </div>
   </>
 )
+ButtonVariousSizes.storyName = 'Various sizes'
