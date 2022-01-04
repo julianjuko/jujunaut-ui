@@ -2,7 +2,13 @@ import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
 
 import { TButtonSize, TColorVariant } from './Button.types'
-import { PRIMARY, SECONDARY, TERTIARY, QUATERNARY, QUINARY } from '../colors'
+import {
+  PRIMARY,
+  SECONDARY,
+  TERTIARY,
+  QUATERNARY,
+  QUINARY
+} from '../../shared/colors'
 
 interface IProps {
   size: TButtonSize
