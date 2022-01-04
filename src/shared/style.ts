@@ -4,27 +4,34 @@ import MonumentGroteskRegularWoff from '../../static/fonts/MonumentGrotesk-Regul
 import MonumentGroteskBoldWoff from '../../static/fonts/MonumentGrotesk-Bold.woff'
 import MonumentGroteskItalicWoff from '../../static/fonts/MonumentGrotesk-Italic.woff'
 import MonumentGroteskBoldItalicWoff from '../../static/fonts/MonumentGrotesk-BoldItalic.woff'
+import MonumentGroteskRegularTtf from '../../static/fonts/MonumentGrotesk-Regular.ttf'
+import MonumentGroteskBoldTtf from '../../static/fonts/MonumentGrotesk-Bold.ttf'
+import MonumentGroteskItalicTtf from '../../static/fonts/MonumentGrotesk-Italic.ttf'
+import MonumentGroteskBoldItalicTtf from '../../static/fonts/MonumentGrotesk-BoldItalic.ttf'
 
 const spacerPx = 16
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskRegularWoff}) format('woff');
+    src: url(${MonumentGroteskRegularWoff}) format('woff'),
+         url(${MonumentGroteskRegularTtf}) format('opentype');
     font-weight: normal;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskBoldWoff}) format('woff');
+    src: url(${MonumentGroteskBoldWoff}) format('woff'),
+         url(${MonumentGroteskBoldTtf}) format('opentype');
     font-weight: bold;
     font-style: normal;
   }
 
   @font-face {
     font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskItalicWoff}) format('woff');
+    src: url(${MonumentGroteskItalicWoff}) format('woff'),
+         url(${MonumentGroteskItalicTtf}) format('opentype');
     font-weight: normal;
     font-style: italic;
   }
@@ -32,6 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Monument Grotesk';
     src: url(${MonumentGroteskBoldItalicWoff}) format('woff'),
+         url(${MonumentGroteskBoldItalicTtf}) format('opentype');
     font-weight: bold;
     font-style: italic;
   }
