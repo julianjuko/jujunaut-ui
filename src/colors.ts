@@ -57,9 +57,3 @@ export const QUINARY = `hsl(
   ${QUINARY_SATURATION}%,
   ${QUINARY_LIGHTNESS}%
 )`
-
-console.log(PRIMARY)
-console.log(SECONDARY)
-console.log(TERTIARY)
-console.log(QUATERNARY)
-console.log(QUINARY)
