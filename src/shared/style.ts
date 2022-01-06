@@ -1,64 +1,30 @@
 import { createGlobalStyle } from 'styled-components'
 
-import MonumentGroteskRegularWoff from '../../static/fonts/MonumentGrotesk-Regular.woff'
-import MonumentGroteskBoldWoff from '../../static/fonts/MonumentGrotesk-Bold.woff'
-import MonumentGroteskItalicWoff from '../../static/fonts/MonumentGrotesk-Italic.woff'
-import MonumentGroteskBoldItalicWoff from '../../static/fonts/MonumentGrotesk-BoldItalic.woff'
-import MonumentGroteskRegularTtf from '../../static/fonts/MonumentGrotesk-Regular.ttf'
-import MonumentGroteskBoldTtf from '../../static/fonts/MonumentGrotesk-Bold.ttf'
-import MonumentGroteskItalicTtf from '../../static/fonts/MonumentGrotesk-Italic.ttf'
-import MonumentGroteskBoldItalicTtf from '../../static/fonts/MonumentGrotesk-BoldItalic.ttf'
+import Manrope from '../../static/fonts/Manrope.woff2'
 
 const spacerPx = 16
 
 export const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskRegularWoff}) format('woff'),
-         url(${MonumentGroteskRegularTtf}) format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskBoldWoff}) format('woff'),
-         url(${MonumentGroteskBoldTtf}) format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskItalicWoff}) format('woff'),
-         url(${MonumentGroteskItalicTtf}) format('opentype');
-    font-weight: normal;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: 'Monument Grotesk';
-    src: url(${MonumentGroteskBoldItalicWoff}) format('woff'),
-         url(${MonumentGroteskBoldItalicTtf}) format('opentype');
-    font-weight: bold;
-    font-style: italic;
+    font-family: 'Manrope';
+    src: url(${Manrope}) format('woff2');
   }
 
   html {
-    font-family: 'Monument Grotesk', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Times New Roman', sans-serif;
     font-size: 100%;
   }
 
   body {
     font-size: 1rem;
     line-height: 1rem;
-    font-family: 'Monument Grotesk', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Times New Roman', sans-serif;
   } 
 
   * {
     font-size: 1rem;
     line-height: 1rem;
-    font-family: 'Monument Grotesk', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Times New Roman', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
