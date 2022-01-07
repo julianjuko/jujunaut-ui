@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Button from './Button'
+import { Button } from './Button'
 import { PRIMARY, QUINARY, TERTIARY } from '../../shared/colors'
 
 export default {
-  title: 'Button',
+  title: 'Controls/Button',
   component: Button
 }
 

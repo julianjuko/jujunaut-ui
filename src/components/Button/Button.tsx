@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
 
-import { TButtonSize, TColorVariant } from './Button.types'
+import { TButtonSize } from './Button.types'
 import {
   PRIMARY,
   SECONDARY,
@@ -9,6 +9,7 @@ import {
   QUATERNARY,
   QUINARY
 } from '../../shared/colors'
+import { TColorVariant } from '../../types/color'
 
 interface IProps {
   size: TButtonSize
@@ -90,5 +91,3 @@ export const Button = styled.button<IProps>`
     ${({ variant }) => variant === 'quinary' && buttonActive(QUINARY)}
   }
 `
-
-export default Button

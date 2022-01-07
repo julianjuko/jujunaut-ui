@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
-import Manrope from '../../static/fonts/Manrope.woff2'
+const Manrope = require('./static/fonts/Manrope.woff2')
 
 const spacerPx = 16
 
@@ -11,20 +11,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-family: 'Manrope', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Helvetica', sans-serif;
     font-size: 100%;
   }
 
   body {
     font-size: 1rem;
     line-height: 1rem;
-    font-family: 'Manrope', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Helvetica', sans-serif;
   } 
 
   * {
     font-size: 1rem;
     line-height: 1rem;
-    font-family: 'Manrope', 'Times New Roman', sans-serif;
+    font-family: 'Manrope', 'Helvetica', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
