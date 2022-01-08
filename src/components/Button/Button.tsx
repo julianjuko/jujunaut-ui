@@ -1,20 +1,15 @@
+import React from 'react'
 import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
 
-import { TButtonSize } from './Button.types'
-import {
-  PRIMARY,
-  SECONDARY,
-  TERTIARY,
-  QUATERNARY,
-  QUINARY
-} from '../../shared/colors'
-import { TColorVariant } from '../../types/color'
+import { ButtonSize } from './Button.types'
+import { ColorVariant } from '../../types/color'
+import { colorVariant } from '../../utils/color'
 
-interface IProps {
-  size: TButtonSize
-  variant: TColorVariant
-}
+type RenderProps = React.PropsWithChildren<{
+  size: ButtonSize
+  variant: ColorVariant
+}>
 
 const buttonIdle = (color: string) => css`
   background-color: ${color};
@@ -35,59 +30,56 @@ const buttonAura = (color: string) => css`
     0px 0px 2px ${lighten(0.15, color)};
 `
 
-export const Button = styled.button<IProps>`
-  display: flex;
-  border: none;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-  ${({ size }) =>
-    size === 'sm' &&
-    css`
+const buttonSize = (size: ButtonSize) => {
+  if (size === 'sm') {
+    return css`
       font-size: 0.75rem;
       height: 24px;
       border-radius: 2px;
       padding: 0 8px;
-    `}
+    `
+  }
 
-  ${({ size }) =>
-    size === 'md' &&
-    css`
+  if (size === 'md') {
+    return css`
       font-size: 0.875rem;
       height: 36px;
       border-radius: 6px;
       padding: 0 12px;
-    `}
-
-  ${({ size }) =>
-    size === 'lg' &&
-    css`
-      height: 48px;
-      border-radius: 12px;
-      padding: 0 16px;
-    `}
-
-  ${({ variant }) => variant === 'primary' && buttonIdle(PRIMARY)}
-  ${({ variant }) => variant === 'primary' && buttonAura(PRIMARY)}
-
-  ${({ variant }) => variant === 'secondary' && buttonIdle(SECONDARY)}
-  ${({ variant }) => variant === 'secondary' && buttonAura(SECONDARY)}
-
-  ${({ variant }) => variant === 'tertiary' && buttonIdle(TERTIARY)}
-  ${({ variant }) => variant === 'tertiary' && buttonAura(TERTIARY)}
-
-  ${({ variant }) => variant === 'quaternary' && buttonIdle(QUATERNARY)}
-  ${({ variant }) => variant === 'quaternary' && buttonAura(QUATERNARY)}
-
-  ${({ variant }) => variant === 'quinary' && buttonIdle(QUINARY)}
-  ${({ variant }) => variant === 'quinary' && buttonAura(QUINARY)}
-
-  &:active {
-    ${({ variant }) => variant === 'primary' && buttonActive(PRIMARY)}
-    ${({ variant }) => variant === 'secondary' && buttonActive(SECONDARY)}
-    ${({ variant }) => variant === 'tertiary' && buttonActive(TERTIARY)}
-    ${({ variant }) => variant === 'quaternary' && buttonActive(QUATERNARY)}
-    ${({ variant }) => variant === 'quinary' && buttonActive(QUINARY)}
+    `
   }
-`
+
+  // size === 'lg'
+  return css`
+    height: 48px;
+    border-radius: 12px;
+    padding: 0 16px;
+  `
+}
+
+const render = (props: RenderProps): JSX.Element => {
+  const Button = styled.button`
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    ${buttonSize(props.size)}
+
+    ${buttonIdle(colorVariant(props.variant))}
+    ${buttonAura(colorVariant(props.variant))}
+
+    &:active {
+      ${buttonActive(colorVariant(props.variant))}
+    }
+  `
+
+  return <Button>{props.children}</Button>
+}
+
+type Props = RenderProps
+
+export const Button: React.FC<Props> = (props) => {
+  return render(props)
+}

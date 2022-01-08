@@ -1,8 +1,8 @@
-export type TColorVariant =
+export type ColorVariant =
   | 'primary'
   | 'secondary'
   | 'tertiary'
   | 'quaternary'
   | 'quinary'
 
-export type TColorShade = 'light' | 'dark'
+export type ColorShade = 'light' | 'dark'

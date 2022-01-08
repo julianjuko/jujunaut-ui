@@ -1,8 +1,14 @@
 import { darken, lighten } from 'polished'
-import { PRIMARY, QUINARY, SECONDARY, TERTIARY } from '../shared/colors'
-import { TColorShade, TColorVariant } from '../types/color'
+import {
+  PRIMARY,
+  SECONDARY,
+  TERTIARY,
+  QUATERNARY,
+  QUINARY
+} from '../shared/colors'
+import { ColorShade, ColorVariant } from '../types/color'
 
-const applyShade = (color: string, shade?: TColorShade) => {
+const applyShade = (color: string, shade?: ColorShade) => {
   if (shade === 'light') {
     return lighten('0.1', color)
   }
@@ -12,9 +18,12 @@ const applyShade = (color: string, shade?: TColorShade) => {
   }
 
   return color
-} 
+}
 
-export const colorVariant = (variant: TColorVariant, shade?: TColorShade ): string => {
+export const colorVariant = (
+  variant: ColorVariant,
+  shade?: ColorShade
+): string => {
   if (variant === 'primary') {
     return applyShade(PRIMARY, shade)
   }
@@ -28,7 +37,7 @@ export const colorVariant = (variant: TColorVariant, shade?: TColorShade ): stri
   }
 
   if (variant === 'quaternary') {
-    return applyShade(TERTIARY, shade)
+    return applyShade(QUATERNARY, shade)
   }
 
   //quinary
