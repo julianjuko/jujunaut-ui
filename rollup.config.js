@@ -32,9 +32,6 @@ export default {
       use: ['sass'],
       extensions: ['.scss', '.css']
     }),
-    copy({
-      targets: [{ src: ['./src/static'], dest: 'build' }],
-    }),
     resolve(),
     typescript({
       useTsconfigDeclarationDir: true,
@@ -46,6 +43,9 @@ export default {
     babel({
       babelHelpers: 'runtime',
       exclude: '**/node_modules/**'
+    }),
+    copy({
+      targets: [{ src: ['src/shared/static'], dest: 'build' }]
     })
   ]
 }
