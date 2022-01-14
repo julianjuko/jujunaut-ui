@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { widthFactor } from '../../../constants/style'
 import { colorVariant } from '../../../utils/color'
-import { RenderProps, Props } from './Container.types'
+import { RenderProps, Props } from './Col.types'
 
 const render = (props: RenderProps): JSX.Element => {
-  const Container = styled.div.attrs((props) =>
+  const Col = styled.div.attrs((props) =>
     props.className
       ? {
           className: props.className
@@ -13,16 +14,14 @@ const render = (props: RenderProps): JSX.Element => {
       : {}
   )`
     background-color: ${props.bgColor};
-    padding: ${props.padding ? `${props.padding}px` : '0'};
+    width: ${props.width ? `${props.width * widthFactor}%` : '0'};
     display: flex;
-    flex-direction: column;
-    width: 100%;
   `
 
-  return <Container>{props.children}</Container>
+  return <Col>{props.children}</Col>
 }
 
-export const Container: React.FC<Props> = (props) => {
+export const Col: React.FC<Props> = (props) => {
   const color = props.bgColor
     ? colorVariant(props.bgColor, props.shade)
     : 'none'
@@ -30,7 +29,7 @@ export const Container: React.FC<Props> = (props) => {
   return render({
     children: props.children,
     bgColor: color,
-    padding: props.padding,
+    width: props.width,
     className: props.className
   })
 }

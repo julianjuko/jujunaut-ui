@@ -2,14 +2,8 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
 
-import { ButtonSize } from './Button.types'
-import { ColorVariant } from '../../types/color'
+import { ButtonSize, RenderProps } from './Button.types'
 import { colorVariant } from '../../utils/color'
-
-type RenderProps = React.PropsWithChildren<{
-  size: ButtonSize
-  variant: ColorVariant
-}>
 
 const buttonIdle = (color: string) => css`
   background-color: ${color};

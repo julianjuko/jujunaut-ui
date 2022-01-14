@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { colorVariant } from '../../../utils/color'
-import { RenderProps, Props } from './Container.types'
+import { RenderProps, Props } from './Row.types'
 
 const render = (props: RenderProps): JSX.Element => {
-  const Container = styled.div.attrs((props) =>
+  const Row = styled.div.attrs((props) =>
     props.className
       ? {
           className: props.className
@@ -13,16 +13,16 @@ const render = (props: RenderProps): JSX.Element => {
       : {}
   )`
     background-color: ${props.bgColor};
-    padding: ${props.padding ? `${props.padding}px` : '0'};
+    height: ${props.height ? `${props.height}px` : '0'};
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 100%;
   `
 
-  return <Container>{props.children}</Container>
+  return <Row>{props.children}</Row>
 }
 
-export const Container: React.FC<Props> = (props) => {
+export const Row: React.FC<Props> = (props) => {
   const color = props.bgColor
     ? colorVariant(props.bgColor, props.shade)
     : 'none'
@@ -30,7 +30,7 @@ export const Container: React.FC<Props> = (props) => {
   return render({
     children: props.children,
     bgColor: color,
-    padding: props.padding,
+    height: props.height,
     className: props.className
   })
 }
