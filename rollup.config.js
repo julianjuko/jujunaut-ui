@@ -15,11 +15,6 @@ export default {
       file: packageJson.module,
       format: 'esm',
       sourcemap: true
-    },
-    {
-      file: packageJson.main,
-      format: 'cjs',
-      sourcemap: true
     }
   ],
   external: [/@babel\/runtime/],
