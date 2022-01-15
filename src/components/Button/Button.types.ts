@@ -6,3 +6,5 @@ export type RenderProps = React.PropsWithChildren<{
   size: ButtonSize
   variant: ColorVariant
 }>
+
+export type Props = RenderProps

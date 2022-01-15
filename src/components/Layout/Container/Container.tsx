@@ -4,22 +4,16 @@ import styled from 'styled-components'
 import { colorVariant } from '../../../utils/color'
 import { RenderProps, Props } from './Container.types'
 
-const render = (props: RenderProps): JSX.Element => {
-  const Container = styled.div.attrs((props) =>
-    props.className
-      ? {
-          className: props.className
-        }
-      : {}
-  )`
-    background-color: ${props.bgColor};
-    padding: ${props.padding ? `${props.padding}px` : '0'};
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  `
+const SContainer = styled.div.attrs((props: RenderProps) => props)`
+  background-color: ${(props) => props.bgColor};
+  padding: ${(props) => (props.padding ? `${props.padding}px` : '0')};
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`
 
-  return <Container>{props.children}</Container>
+const render = (props: RenderProps): JSX.Element => {
+  return <SContainer {...props}>{props.children}</SContainer>
 }
 
 export const Container: React.FC<Props> = (props) => {

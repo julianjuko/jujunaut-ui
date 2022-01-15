@@ -2,7 +2,7 @@ import React from 'react'
 import styled, { css } from 'styled-components'
 import { darken, lighten } from 'polished'
 
-import { ButtonSize, RenderProps } from './Button.types'
+import { ButtonSize, RenderProps, Props } from './Button.types'
 import { colorVariant } from '../../utils/color'
 
 const buttonIdle = (color: string) => css`
@@ -51,28 +51,26 @@ const buttonSize = (size: ButtonSize) => {
   `
 }
 
+const SButton = styled.button.attrs((props: RenderProps) => props)`
+  display: flex;
+  border: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  ${(props) => buttonSize(props.size)}
+
+  ${(props) => buttonIdle(colorVariant(props.variant))}
+  ${(props) => buttonAura(colorVariant(props.variant))}
+
+  &:active {
+    ${(props) => buttonActive(colorVariant(props.variant))}
+  }
+`
+
 const render = (props: RenderProps): JSX.Element => {
-  const Button = styled.button`
-    display: flex;
-    border: none;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    ${buttonSize(props.size)}
-
-    ${buttonIdle(colorVariant(props.variant))}
-    ${buttonAura(colorVariant(props.variant))}
-
-    &:active {
-      ${buttonActive(colorVariant(props.variant))}
-    }
-  `
-
-  return <Button>{props.children}</Button>
+  return <SButton {...props}>{props.children}</SButton>
 }
-
-type Props = RenderProps
 
 export const Button: React.FC<Props> = (props) => {
   return render(props)
