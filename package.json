@@ -1,9 +1,10 @@
 {
   "name": "jujunaut-ui",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A whimsical UI",
   "main": "build/index.cjs.js",
   "module": "build/index.esm.js",
+  "types": "dist/index.d.ts",
   "files": [
     "build"
   ],
