@@ -40,7 +40,9 @@ export default {
       exclude: '**/node_modules/**'
     }),
     copy({
-      targets: [{ src: ['src/shared/static'], dest: 'build' }]
+      targets: [
+        { src: ['src/shared/static', 'src/shared/index.scss'], dest: 'build' }
+      ]
     })
   ]
 }

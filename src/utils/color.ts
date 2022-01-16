@@ -5,7 +5,7 @@ import {
   TERTIARY,
   QUATERNARY,
   QUINARY
-} from '../shared/colors'
+} from '../constants/colors'
 import { ColorShade, ColorVariant } from '../types/color'
 
 const applyShade = (color: string, shade?: ColorShade) => {

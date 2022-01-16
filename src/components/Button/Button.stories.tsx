@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Button } from './Button'
-import { PRIMARY, QUINARY, TERTIARY } from '../../shared/colors'
+import { PRIMARY, QUINARY, TERTIARY } from '../../constants/colors'
 
 export default {
   title: 'Controls/Button',
