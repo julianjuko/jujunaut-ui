@@ -9,13 +9,13 @@ const RANDOM_INTERVAL = 72
 
 const PRIMARY_HUE = SEED
 const SECONDARY_HUE =
-  PRIMARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + 1
+  PRIMARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + RANDOM_INTERVAL
 const TERTIARY_HUE =
-  SECONDARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + 1
+  SECONDARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + RANDOM_INTERVAL
 const QUATERNARY_HUE =
-  TERTIARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + 1
+  TERTIARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + RANDOM_INTERVAL
 const QUINARY_HUE =
-  QUATERNARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + 1
+  QUATERNARY_HUE + Math.floor(Math.random() * RANDOM_INTERVAL) + RANDOM_INTERVAL
 
 const PRIMARY_SATURATION = 40
 const PRIMARY_LIGHTNESS = 80
