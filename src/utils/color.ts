@@ -1,4 +1,4 @@
-import { darken, lighten } from 'polished'
+import { darken, lighten, tint } from 'polished'
 import {
   PRIMARY,
   SECONDARY,
@@ -14,7 +14,7 @@ const applyShade = (color: string, shade?: ColorShade) => {
   }
 
   if (shade === 'dark') {
-    return darken('0.1', color)
+    return tint('0.1', (darken('0.1', color)))
   }
 
   return color
