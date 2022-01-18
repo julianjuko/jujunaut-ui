@@ -21,7 +21,7 @@ export const ButtonVariousSizes = () => (
       }}
     >
       <div className='mr-2'>
-        <Button size='sm' variant='primary'>
+        <Button size='sm' variant='primary' onClick={() => console.log('This is the only button with an action')}>
           Default
         </Button>
       </div>

@@ -69,7 +69,9 @@ const SButton = styled.button.attrs((props: RenderProps) => props)`
 `
 
 const render = (props: RenderProps): JSX.Element => {
-  return <SButton {...props}>{props.children}</SButton>
+  const { onClick, children, ...rest } = props
+
+  return <SButton onClick={onClick} {...rest}>{children}</SButton>
 }
 
 export const Button: React.FC<Props> = (props) => {
