@@ -1,4 +1,3 @@
-import { MouseEventHandler } from 'react'
 import { ColorVariant } from '../../types/color'
 
 export type ButtonSize = 'sm' | 'md' | 'lg'
